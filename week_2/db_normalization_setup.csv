@@ -1,0 +1,7 @@
+customer,date,address,product_1,price_1,quantity_1,product_2,price_2,quantity_2,product_3,price_3,quantity_3
+Tina Ward,3/4/2020,"123 Street Dr, Citytown, Tennessee 12334",widget,10,1,whatchamacallit,5,3,thingamajig,15,2
+Tina Ward,3/5/2020,"123 Street Dr, Citytown, Tennessee 12334",widget,10,1,,,,,,
+Casey Sanchez,3/5/2020,"567 Road Cir, Townsboro, Maine 76399",whatchamacallit,5,2,thingamajig,15,1,,,
+Tina Ward,3/6/2020,"123 Street Dr, Citytown, Tennessee 12334",whatchamacallit,5,3,,,,,,
+Adam Michaels,3/6/2020,"9394 Drive Ln, Fortville, California 90234",widget,10,2,,,,,,
+Casey Sanchez,3/7/2020,"567 Road Cir, Townsboro, Maine 76399",thingamajig,15,1,,,,,,
