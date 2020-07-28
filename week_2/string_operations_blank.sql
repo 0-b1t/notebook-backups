@@ -12,6 +12,11 @@
 --  Please name these fields to indicate which is line 1 and line 2.
 --  We're only going to use this overlay for 2020, so there's no need to future proof.
 
+SELECT
+	CONCAT(namefirst, ' ', namelast, ' (age: ', (2020-birthyear),')') AS first_line,
+	'Bats: ' || bats || '; Throws: ' || throws AS second_line
+FROM people;
+
 
 
 -- Request from client:
@@ -21,6 +26,10 @@
 --  Name these outputs bamefirst and bamelast.
 
 
+
+SELECT 'B' || SUBSTRING(namefirst, 2) AS bamefirst,   -- SUBSTRING(start_position, length)
+		'B' || SUBSTRING(namelast, 2) AS bamelast
+FROM people;
 
 -- Request from client:
 --  Ok, that last CEO didn't last long.... 
@@ -33,6 +42,14 @@
 --  to only show names that orginally had Bs in them.
 
 
+SELECT	namefirst,
+		namelast,
+		REPLACE(REPLACE(namefirst, 'b', ''), 'B', '') AS no_b_first,
+		REPLACE(REPLACE(namelast, 'b', ''), 'B', '') AS no_b_last
+FROM people
+WHERE namefirst ILIKE '%b%' OR namelast ILIKE '%b%' ;
+
+
 
 -- ok... no more made up context to give. so this ones real.
 -- i think right handed people are better
@@ -42,5 +59,14 @@
 -- please provide a query to assert right hand dominance
 -- (return the bats & throws so i can double check the work)
 -- for an extra challenge, right this query with only your right hand
+
+
+SELECT 	bats, 
+		throws,
+		CASE
+			WHEN bats = 'R' AND throws = 'R' THEN UPPER(CONCAT(namefirst, ' ',namelast))
+			ELSE LOWER(CONCAT(namefirst, ' ',namelast))
+		END AS disp
+FROM people;
 
 
