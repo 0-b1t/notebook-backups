@@ -84,7 +84,7 @@ SELECT state, avg_math_4_score,
 				WHERE year = 2000
 			) THEN 'Below'
 		ELSE 'Above'
-	END below_average_states_y2000
+	END AS below_average_states_y2000
 FROM 
 	naep
 WHERE 
@@ -117,10 +117,16 @@ ORDER BY
 
 -- 9
 
-SELECT ROUND(n.avg_math_4_score,2), f.total_expenditure, n.state
+SELECT 
+	ROUND(n.avg_math_4_score,2) AS rounded_avg_math_4
+	,f.total_expenditure
+	,n.state
 FROM naep AS n
-LEFT OUTER JOIN finance as f
+LEFT OUTER JOIN finance AS f
 ON n.id = f.id
-WHERE n.year = 2000 AND n.avg_math_4_score IS NOT NULL
-ORDER BY f.total_expenditure DESC;
+WHERE 
+	n.year = 2000 
+	AND n.avg_math_4_score IS NOT NULL
+ORDER BY 
+	f.total_expenditure DESC;
 
