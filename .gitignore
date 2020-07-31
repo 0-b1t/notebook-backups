@@ -1,2 +1,5 @@
 # has my password
 postgres_python_init.ipynb
+
+# contains passwords/ api keys
+secrets.json
